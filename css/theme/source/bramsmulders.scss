@@ -57,23 +57,44 @@ section.has-dark-background {
     .slides {
         text-align: left;
     }
+
     p {
         line-height: 1.5;
     }
-}
 
-.reveal.reveal a {
-    border-bottom: 0.15em solid $linkColor;
-    font-weight: 700;
-    text-decoration: none;
-    color: $mainColor;
-
-    &:hover,
-    &:focus,
-    &:active {
-        color: $linkColor;
+    a {
         border-bottom: 0.15em solid $linkColor;
+        font-weight: 700;
+        text-decoration: none;
+        color: $mainColor;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: $linkColor;
+            border-bottom: 0.15em solid $linkColor;
+        }
+    }
+
+    blockquote {
+        width: auto;
+        margin: 0 1.5em 0 1.5em;
+        padding: 0.75em 1.5em;
+        text-indent: 0;
+        font-style: italic;
+        border-left: 6px solid #d3d3d3;
+        box-shadow: none;
+        background: transparent;
+
+        p {
+            margin-top: 0;
+        }
+
+        *:last-child {
+            margin-bottom: 0;
+        }
     }
 }
+
 
 @import "../template/theme";
