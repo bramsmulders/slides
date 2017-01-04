@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------*\
+    $THEME.bramsmulders
+    Bram smulders style theming
+\*----------------------------------------------------------------------------*/
+
+/*  Functions/Mixins
+    Functions and/or mixins used in this module
+\*----------------------------------------------------------------------------*/
+
+@import "../template/mixins";
+@import "../template/settings";
+
+
+/*  Variables
+    Variables used in this module
+\*----------------------------------------------------------------------------*/
+
+$backgroundColor: #ffffff;
+
+$mainColor: #3e4147;
+$headingColor: hotpink;
+
+$mainFontSize: 38px;
+$mainFont: 'Arvo', serif;
+$headingFont: 'Oswald', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: $headingColor;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+$selectionColor: $mainColor;
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+
+
+/*  Module
+    Core module
+\*----------------------------------------------------------------------------*/
+
+@import url(../../lib/font/bramsmulders/bramsmulders.css);
+
+section.has-dark-background {
+    &, h1, h2, h3, h4, h5, h6 {
+        color: #fff;
+    }
+}
+
+
+.reveal.reveal {
+    .slides {
+        text-align: left;
+    }
+    p {
+        line-height: 1.5;
+    }
+}
+
+.reveal.reveal a {
+    border-bottom: 0.15em solid $linkColor;
+    font-weight: 700;
+    text-decoration: none;
+    color: $mainColor;
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: $linkColor;
+        border-bottom: 0.15em solid $linkColor;
+    }
+}
+
+@import "../template/theme";
