@@ -57,68 +57,34 @@
 
 <!-- 1. Designing systems -->
 				<section>
-					<h1><mark>1.</mark> Systemen ontwerpen</h1>
+					<h2>Systemen ontwerpen</h2>
+
+					<aside class="notes">
+						<mark>@todo->notes</mark>
+					</aside>
 				</section>
 
 
-				<section>
-					<h2>Lang, lang geleden...</h2>
-				</section>
-
-
-				<section data-background="images/_general/tim-berners-lee.jpg"></section>
-
 
 				<section>
-					<h3>World Wide Web</h3>
+					<h3>Modulariteit</h3>
 					<ul>
-						<li class="fragment">Gemakkelijk <strong>informatie</strong> delen</li>
-						<li class="fragment">Vergelijkbaar met het uitgeven van geschreven informatie</li>
-						<li class="fragment">Bedrijven vertaalden hun printmedia direct naar het web</li>
-						<li class="fragment">Resultaat: 1 dimensionale paginas</li>
-						<li class="fragment">Makkelijk voor (web)designers</li>
+						<li class="fragment">Uniform</li>
+						<li class="fragment">Betrouwbaar</li>
+						<li class="fragment">Veiliger</li>
+						<li class="fragment">Sneller</li>
 					</ul>
-				</section>
-
-
-				<section>
-					<h3>De webpagina</h3>
-					<p>25 jaar verder en <strong>de pagina</strong> zit nogsteeds ingebakken</p>
-				</section>
-
-
-				<section>
-					<blockquote>
-						<p>We willen een website met vijf <strong>pagina’s</strong> lanceren in augustus</p>
-					</blockquote>
-				</section>
-
-
-				<section>
-					<blockquote>
-						<p>We willen een redesign van onze corporate website met 4000 <strong>pagina’s</strong></p>
-					</blockquote>
-				</section>
-
-
-				<section>
-					<blockquote>
-						<p>Bram, kan je eens inschatten wat het kost om deze home<strong>pagina</strong> te bouwen?</p>
-					</blockquote>
-				</section>
-
-
-				<section data-background="images/_general/gifs/butwhy.gif"></section>
-
-
-				<section data-background="images/_general/devices.jpg">
-					<h2>We verdrinken in een zee van verschillende devices</h2>
 
 					<aside class="notes">
 						<ul>
-							<li>Multi device is onze realiteit</li>
-							<li>Vroeger moeilijk genoeg voor een handvol desktop browsers</li>
-							<li>zorgen dat alles blijft werken op smartphones, tablets, phablets, netbooks, notebooks,desktops, tv's, consoles, en meer</li>
+							<li>Modulariteit is veel langer gemeengoed dan het web</li>
+							<li>Eerste auto's werden in 1 stuk hand gemaakt</li>
+							<li>Ford introduceerde de eerste modulaire auto, resulteerde in:</li>
+							<li><mark>Skip over fragments:</mark></li>
+							<li>Uniformiteit, <mark>@todo -> voorbeelden</mark></li>
+							<li>Betrouwbaar, specialisten bouwen de componenten ipv 1 a 2 personen de hele auto</li>
+							<li>Veilig, elk component werd uitvoerig getest voor het de auto in gaat</li>
+							<li>Sneller, doordat elke component op de plank ligt konden auto's sneller geassembleerd worden</li>
 						</ul>
 					</aside>
 				</section>
@@ -126,96 +92,114 @@
 
 
 				<section>
-					<h2>Beheersbare strategie</h2>
-				</section>
-
-
-
-				<section>
-					<h3>Redesign = no-go</h3>
+					<h3>Software ontwikkeling</h3>
 					<ul>
-						<li class="fragment">Na de launch komen de eerste klachten</li>
-						<li class="fragment">Redesign zorgt voor een nieuwe leercurve</li>
-						<li class="fragment">Gebruikers worden terug naar 0 getrapt</li>
+						<li class="fragment">Single responsibility principe</li>
+						<li class="fragment">Open/closed principe</li>
+						<li class="fragment">Separation of concerns</li>
 					</ul>
 
 					<aside class="notes">
 						<ul>
-							<li>Elke 3-8 jaar een redesign?</li>
+							<li>Vanuit machines rolden we de computer wereld in</li>
+							<li>Ontwikkelaars pasten dezelfde modulaire technieken toe in programma's</li>
+							<li>Resulteerde in: </li>
+							<li><mark>Skip over fragments:</mark></li>
 						</ul>
 					</aside>
 				</section>
 
 
-				<section data-background="images/patternlab/escalator.gif"></section>
-
 
 				<section>
-					<h2>Een iteratief proces</h2>
+					<h3>Waarom nu?</h3>
 				</section>
 
 
-				<section>
 
-					<section>
-						<h3>Inhoud modulariseren</h3>
-
-						<aside class="notes">
-							<ul>
-								<li>Content schrijven was gemakkelijk</li>
-								<li>De content wordt bekeken op een groot scala aan devices</li>
-							</ul>
-						</aside>
-					</section>
-
-					<section>
-						<h4>Sitecore experience editor</h4>
-						<img src="images/patternlab/sitecoreexpeditor.png" alt="">
-
-						<aside class="notes">
-							<ul>
-								<li>Modulair</li>
-								<li>Content streams</li>
-								<li>Componenten</li>
-							</ul>
-						</aside>
-					</section>
+				<section data-background="images/_general/devices-clear.jpg">
+					<aside class="notes">
+						<ul>
+							<li>We verdrinken in een zee van apparaten, viewports & online omgevingen</li>
+							<li>Diversiteit zal alleen maar toenemen</li>
+							<li>We weten niet wat komen gaat</li>
+							<li>Dit is onze realiteit</li>
+						</ul>
+					</aside>
 				</section>
+
+
+
+				<section>
+					<h3>Een stap terug</h3>
+					<aside class="notes">
+						<ul>
+							<li>Een stap terug doen</li>
+							<li>Verantwoordelijkheden opsplitsen in kleinere, behapbare stukken</li>
+							<li>Langzaam verspreid dit elan zich over onze branche</li>
+						</ul>
+					</aside>
+				</section>
+
+
+
+				<section>
+					<blockquote>
+						<p>We’re not designing pages, we’re designing systems of components.</p>
+						<cite>- Stephen Hay</cite>
+					</blockquote>
+				</section>
+
 
 
 
 
 <!-- 2. Atomic design methodology -->
 				<section>
-					<h1><mark>2.</mark> Atomic design principe</h1>
+					<h2>Atomic design</h2>
+
+					<aside class="notes">
+						<ul>
+							<li>Brad frost zocht naar een oplossing in andere gebieden & branches</li>
+							<li>We leven in een complexe wereld</li>
+							<li>Hij bedacht dat anderen vergelijkbare problemen al eens getackeld hebben</li>
+							<li>Industrial design & architectuur, vliegtuigen, boten, gebouwen</li>
+						</ul>
+					</aside>
 				</section>
 
 
 
-
-
-<!-- 3. Tooling -->
 				<section>
-					<h1><mark>3.</mark> Tooling</h1>
+					<h3>Wat zijn de bouwstenen van een interface?</h3>
+
+					<aside class="notes">
+						<ul>
+							<li>Wat zijn onze lego blokjes?</li>
+							<li>Wat zijn onze ingredianten voor onze subway sandwiches?</li>
+						</ul>
+					</aside>
 				</section>
 
 
-
-
-
-<!-- 4. The Atomic workflow -->
 				<section>
-					<h1><mark>4.</mark> Het Atomic werkproces</h1>
+					<h3>Hints uit de chemie</h3>
+					<img class="image--small" src="images/patternlab/chemical-equation.png" alt="">
 				</section>
 
 
 
 
 
-<!-- 5. Maintaining design systems -->
+<!-- 3. Patternlab -->
 				<section>
-					<h1><mark>5.</mark> Onderhouden</h1>
+					<h1><mark>3.</mark> Patternlab</h1>
 				</section>
+
+
+
+
+
 			</div>
 		</div>
 

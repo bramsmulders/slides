@@ -93,6 +93,14 @@ section.has-dark-background {
         *:last-child {
             margin-bottom: 0;
         }
+
+        cite {
+            font-weight: bold;
+        }
+    }
+
+    .image--small {
+        max-width: 15em;
     }
 }
 
