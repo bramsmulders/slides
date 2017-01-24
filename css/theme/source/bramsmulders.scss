@@ -35,8 +35,8 @@ $selectionColor: $mainColor;
 
 $heading1Size: 2.5em;
 $heading2Size: 1.6em;
-$heading3Size: 1.3em;
-$heading4Size: 1.0em;
+$heading3Size: 1.6em;
+$heading4Size: 1.6em;
 
 
 
@@ -101,6 +101,10 @@ section.has-dark-background {
 
     .image--small {
         max-width: 15em;
+    }
+
+    .image--fit-screen {
+        max-height: 15em;
     }
 }
 

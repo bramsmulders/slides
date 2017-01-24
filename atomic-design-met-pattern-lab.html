@@ -163,7 +163,71 @@
 							<li>Brad frost zocht naar een oplossing in andere gebieden & branches</li>
 							<li>We leven in een complexe wereld</li>
 							<li>Hij bedacht dat anderen vergelijkbare problemen al eens getackeld hebben</li>
-							<li>Industrial design & architectuur, vliegtuigen, boten, gebouwen</li>
+							<li>Industriele vorgeving & architectuur, vliegtuigen, boten, gebouwen</li>
+						</ul>
+					</aside>
+				</section>
+
+
+
+				<section>
+					<h3>Hints uit de scheikunde</h3>
+					<img class="image--small" src="images/patternlab/chemical-equation.png" alt="">
+					<aside class="notes">
+						<ul>
+							<li>Moleculen zijn "modulair" opgebouwd</li>
+							<li>Water is bijv. opgebouwd uit waterstof & zuurstof atomen</li>
+							<li>Dit is een voorbeeld wat al een miljoenmiljard jaar gewerkt heeft</li>
+							<li>Waarom hier geen gebruik van maken?</li>
+						</ul>
+					</aside>
+				</section>
+
+
+
+				<section>
+					<h3>Atomen</h3>
+					<ul>
+						<li>Meest simpele (functionele) bouwstenen van materie</li>
+						<li>Verschillende eigenschappen</li>
+						<li>Kunnen niet kleiner gemaakt worden zonder functionaliteit verliezen</li>
+					</ul>
+				</section>
+
+
+
+				<section>
+					<h3>Moleculen</h3>
+					<ul>
+						<li>Groepen van twee of meer atomen</li>
+						<li>Hebben meer unieke eigenschappen</li>
+						<li>Hebben meer functie dan losse atomen</li>
+					</ul>
+				</section>
+
+
+
+				<section>
+					<h3>Organismen</h3>
+					<ul>
+						<li>Samenvoegingen van moleculen die als één functioneren</li>
+						<li>Variëren van kleine eencelligen tot complexe organismen zoals mensen</li>
+					</ul>
+				</section>
+
+
+
+				<section>
+					<h3>Mentaal model</h3>
+					<img  src="images/patternlab/atomic-design-model.png" alt="">
+
+					<aside class="notes">
+						<ul>
+							<li>Geen lineair proces</li>
+							<li>Mentaal model om interfaces te benaderen als een:</li>
+							<li>Samenhangend geheel</li>
+							<li>Een collectie van onderdelen</li>
+							<li>Elk van de 5 trappen heeft zijn eigen functie binnen het systeem</li>
 						</ul>
 					</aside>
 				</section>
@@ -176,29 +240,336 @@
 					<aside class="notes">
 						<ul>
 							<li>Wat zijn onze lego blokjes?</li>
-							<li>Wat zijn onze ingredianten voor onze subway sandwiches?</li>
+							<li>Wat zijn onze ingredienten voor onze subway sandwiches?</li>
+							<li>Wat zijn onze onderdelen om een auto te maken?</li>
+							<li>Deep dive in de 5 trappen:</li>
+						</ul>
+					</aside>
+				</section>
+
+
+
+
+				<section>
+					<section>
+						<h3>Atoms</h3>
+
+						<ul>
+							<li class="fragment">Het fundament van de user interface</li>
+							<li class="fragment">Basis HTML-elementen als <span class="fragment">labels</span><span class="fragment">, input elementen</span><span class="fragment">, headings</span><span class="fragment">, buttons</span></li>
+							<li class="fragment">Al het andere wat niet kleiner gemaakt kan worden zonder functie te verliezen</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>Zoals in scheikunde zijn atomen het fundament van de user interface</li>
+								<li>Dit zijn basis HTML elementen als labels, input elementen, headings, buttons</li>
+								<li><mark>Beneden, voorbeelden</mark></li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img src="images/patternlab/atom-label.png" alt="">
+						<img src="images/patternlab/atom-input-text.png" alt="">
+						<img src="images/patternlab/atom-button.png" alt="">
+
+						<aside class="notes">
+							<ul>
+								<li>Een atom heeft unieke eigenschappen</li>
+								<li>In een styleguide laten atoms de basis stijl zien van je user interface</li>
+								<li>Komen pas tot leven door ze te gebruiken in een toepassing</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h3>Molecules</h3>
+
+						<ul>
+							<li class="fragment">Groepen van simpele UI elementen</li>
+							<li class="fragment">Functioneren samen als een eenheid</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>Zoals in scheikunde zijn moleculen groepen van atomen met als doel nieuwe eigenschappen te vormen</li>
+								<li>In interface design bestaan moleculen uit atomen die samenwerken als een nieuwe eenheid met nieuwe functionaliteit</li>
+								<li><mark>Beneden, voorbeelden</mark></li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img class="image--small" src="images/patternlab/molecule.png" alt="">
+
+						<aside class="notes">
+							<ul>
+								<li>Hier vormen de atomen samen een formulier:</li>
+								<li>Een complex molecuul welke de functionaliteiten van de atomen benut om eigen unieke eigenschappen te creeren</li>
+								<li>Het label atoom beschrijft de input atomen</li>
+								<li>Het klikken op het button atoom zorgt er voor dat het formulier verzonden wordt</li>
+								<li>Het resultaat is een herbruikbaar component wat overal in de interface gebruikt kan worden</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Voordelen</h3>
+						<ul>
+							<li class="fragment">Het maakt testen makkelijker</li>
+							<li class="fragment">Moedigt herbruikbaarheid aan</li>
+							<li class="fragment">Zorgt voor consistentie</li>
+						</ul>
+						<aside class="notes">
+							<ul>
+								<li>Helpt designers & developers aan het "single responsibility principle": doe 1 ding, en doe het goed</li>
+								<li>Teveel complexiteit aan een patroon toevoegen maakt de interface onhandelbaar</li>
+								<li>Het maakt testen makkelijker</li>
+								<li>Moedigt herbruikbaarheid aan</li>
+								<li>Zorgt voor consistentie</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h3>Organisms</h3>
+
+						<ul>
+							<li class="fragment">Complexe UI componenten</li>
+							<li class="fragment">Bestaan uit groepen moleculen en/of atomen</li>
+							<li class="fragment">Vormen gescheiden “lagen” binnen de interface</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img class="image--fit-screen" src="images/patternlab/organism.png" alt="">
+
+						<aside class="notes">
+							<ul>
+								<li>Hier vormen de atomen & moleculen samen een 2 koloms layout</li>
+								<li>Verschillende organismen kunnen verschillende of gelijke atomen en moleculen bevatten tegenover andere organismen</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img class="image--fit-screen" src="images/patternlab/organism-coolblue.png" alt="">
+
+						<aside class="notes">
+							<ul>
+								<li>Voorbeeld van coolblue</li>
+								<li>Moleculen worden herhaald</li>
+								<li>Moleculen bestaan weer uit atomen en andere moleculen</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h3>Templates</h3>
+
+						<aside class="notes">
+							<ul>
+								<li>Worden gebruikt voor het schikken van componenten in een pagina-layout</li>
+								<li>Geven vorm aan de onderliggende content structuur</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<blockquote>
+							<p>You can create good experiences without knowing the content. What you can’t do is create good experiences without knowing your content structure. What is your content made from, not what your content is.</p>
+							<cite>- Mark Boulton</cite>
+						</blockquote>
+
+						<aside class="notes">
+							<ul>
+								<li>Je kunt rijke interfaces maken zonder de contetn te kennen</li>
+								<li>Je moet wel de structuur van de content kennen</li>
+								<li>Waar is je content van gemaakt? Niet wat je content is.</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img class="image--fit-screen" src="images/patternlab/template-homepage.png" alt="">
+
+						<aside class="notes">
+							<ul>
+								<li>Door een pagina in een skelet te gieten maken we een systeem waar een gevarieerd scala aan dynamische content in gezet kan worden.</li>
+								<li>Dit wel met expliciet gezette regels voor het type content in de componenten</li>
+								<li>Handig voor developers, designers, content editors</li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+
+
+
+				<section>
+					<section>
+						<h3>Pages</h3>
+						<ul>
+							<li class="fragment">Het meest concrete in het design systeem</li>
+							<li class="fragment">Gebruikt “echte” representatieve content</li>
+							<li class="fragment">Dit is wat de gebruikers te zien krijgen</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>Het meest contrete in het design systeem</li>
+								<li>Belangrijk!</li>
+								<li>Dit is wat de gebruikers te zien krijgen</li>
+								<li>Dit is waar de stakeholders voor tekenen</li>
+								<li>Hier komen alle interface componenten bij elkaar in functionele user interface</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<img class="image--fit-screen" src="images/patternlab/page-homepage.png" alt="">
+					</section>
+
+					<section>
+						<h3>Variaties</h3>
+						<ul>
+							<li class="fragment">Een gebruiker heeft 1 item in zijn winkelmand, een ander 33</li>
+							<li class="fragment">Admin gebruikers hebben meer buttons op hun dashboard dan normale gebruikers</li>
+							<li class="fragment">Een headline kan 76 karakters bevatten, een ander 340</li>
+						</ul>
+
+						<aside class="notes">
+							<ul>
+								<li>Pages zijn de plek om variaties te laten zien & testen</li>
+								<li>Dit is een cruciaal punt in het ontwerpen van een robuust systeem</li>
+							</ul>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Will it blend?</h3>
+						<ul>
+							<li class="fragment">We kunnen de interface testen</li>
+							<li class="fragment">Houd de pagina zich wanneer de content er in staat?</li>
+							<li class="fragment">Ziet het er goed uit?</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Nee? Terug naar de tekentafel</h3>
+						<p class="fragment">Maar dan alleen de moleculen/atomen waar het design wringt</p>
+					</section>
+
+				</section>
+
+
+
+				<section>
+					<h2>Dit is atomic design</h2>
+					<ul>
+						<li><strong>Atoms</strong> UI-elementen die niet kleiner gemaakt kunnen worden zonder functionaliteit te verliezen</li>
+						<li><strong>Molecules</strong> Groepen atoms die eenvoudige UI-componenten vormen</li>
+						<li><strong>Organisms</strong> Complexe componenten vormen afgescheiden lagen in de interface</li>
+						<li><strong>Templates</strong> Paginas en hun onderliggende content structuur</li>
+						<li><strong>Pages</strong> Paginas met echte content en variaties om de robuustheid te testen</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Samenvatting </li>
+						</ul>
+					</aside>
+				</section>
+
+
+
+
+
+<!-- 3. Pattern Lab -->
+				<section>
+					<h1>Pattern Lab</h1>
+				</section>
+
+
+				<section>
+					<h2>Wat is Pattern Lab?</h2>
+					<ul>
+						<li class="fragment">Een static site generator</li>
+						<li class="fragment">Een tool om aantekeningen en documentatie te genereren</li>
+						<li class="fragment">Een starterkit voor componenten</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Static site generator, genereert HTML, CSS & Javascript</li>
+							<li>Documenteert componenten</li>
 						</ul>
 					</aside>
 				</section>
 
 
 				<section>
-					<h3>Hints uit de chemie</h3>
-					<img class="image--small" src="images/patternlab/chemical-equation.png" alt="">
+					<h2>Demo time!</h2>
+
+					<aside class="notes">
+						<ul>
+							<li>Origineel PHP, maar voorbeelden aan de hand van Patternlab-node</li>
+							<li>Gebruiken Starterkit-mustache-demo</li>
+						</ul>
+						<p>Volgorde uitleg demo</p>
+						<ul>
+							<li>Bestands structuur</li>
+							<li>Dynamic data</li>
+							<li>Pseudo patterns</li>
+							<li>Viewport tools</li>
+							<li>Code view</li>
+							<li>Documentation</li>
+							<li>Pattern lineage</li>
+						</ul>
+					</aside>
 				</section>
 
 
 
 
 
-<!-- 3. Patternlab -->
+<!-- 4. Credits -->
 				<section>
-					<h1><mark>3.</mark> Patternlab</h1>
+					<h1>Credits</h1>
+					<ul>
+						<li><a href="http://bradfrost.com/">Brad Frost</a>, <a href="http://dmolsen.com/">Dave Olsen</a> & <a href="http://www.brianmuenzenmeyer.com/">Brian Muenzenmeyer</a></li>
+						<li><a href="http://atomicdesign.bradfrost.com/">Atomic Design Book</a></li>
+						<li><a href="http://patternlab.io/">Patternlab.io</a></li>
+						<li>Awesome colleagues at Colours</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Brad frost, Dave Olsen</li>
+							<li>Brian, Voor zijn hulp en vastberadenheid om van pl-node een success te maken</li>
+							<li>PL.io voor documentatie</li>
+							<li>Colleagues at <a href="http://www.colours.nl">Colours</a></li>
+						</ul>
+					</aside>
 				</section>
-
-
-
-
 
 			</div>
 		</div>
