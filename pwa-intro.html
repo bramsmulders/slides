@@ -1,108 +1,275 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Progressive Web Apps - intro</title>
+        <title>Progressive Web Apps - intro</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/bramsmulders.css">
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/bramsmulders.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					<h1>Progressive Web Apps</h1>
-					<p>15-03-2017 - Bram Smulders</p>
-				</section>
-
-
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Progressive Web Apps</h1>
+                    <p>15-03-2017 - Bram Smulders</p>
+                </section>
 
 
 
-				<!--<section>
-					<h2>Howdy,</h2>
-					<p>
-						Bram Smulders<br>
-						<a href="https://bramsmulders.com">bramsmulders.com</a><br>
-						<a href="https://twitter.com/bramsmulders">@bramsmulders</a><br>
-						<a href="https://bramsmulders.github.io/slides/">bramsmulders.github.io/slides</a>
-					</p>
-				</section>-->
+
+
+                <!--<section>
+                    <h2>Howdy,</h2>
+                    <p>
+                        Bram Smulders<br>
+                        <a href="https://bramsmulders.com">bramsmulders.com</a><br>
+                        <a href="https://twitter.com/bramsmulders">@bramsmulders</a><br>
+                        <a href="https://bramsmulders.github.io/slides/">bramsmulders.github.io/slides</a>
+                    </p>
+                </section>-->
 
 
 
 
 
 <!-- 1. Why PWA -->
-				<section>
-					<h2>Why Progressive Web Apps</h2>
-				</section>
+                <section>
+                    <h2>Why Progressive Web Apps</h2>
+                </section>
 
-				<section>
-					<h3>The new mobile environment</h3>
-					<ul>
-						<li class="fragment">More users have access to the web</li>
-						<li class="fragment">They're not always on the best networks</li>
-						<li class="fragment">Do not always have the best Devices</li>
-					</ul>
-				</section>
+                <section>
+                    <h3>The new mobile environment</h3>
+                    <ul>
+                        <li class="fragment">More users have access to the web</li>
+                        <li class="fragment">They're not always on the best networks</li>
+                        <li class="fragment">Do not always have the best Devices</li>
+                    </ul>
+                </section>
 
-				<section>
-					<h3>And I'm not even talking about upcoming markets</h3>
-				</section>
+                <section>
+                    <h3>And I'm not even talking about upcoming markets</h3>
+                </section>
 
-				<section>
-					<h3>PWA's excel in the mobile landscape</h3>
-					<ul>
-						<li class="fragment">Efficient use of the disk</li>
-						<li class="fragment">Efficient use of the network</li>
-						<li class="fragment">Do not require large installs</li>
-					</ul>
+                <section>
+                    <h3>PWA's excel in the mobile landscape</h3>
+                    <ul>
+                        <li class="fragment">Efficient use of the disk</li>
+                        <li class="fragment">Efficient use of the network</li>
+                        <li class="fragment">Do not require large installs</li>
+                    </ul>
 
-					<aside class="notes">
-						<p>3 pillars of PWA</p>
-						<ul>
-							<li>Efficient use of the disk</li>
-							<li>Efficient use of the network</li>
-							<li>Do not require large installs</li>
-						</ul>
-					</aside>
-				</section>
+                    <aside class="notes">
+                        <p>3 pillars of PWA</p>
+                        <ul>
+                            <li>Efficient use of the disk</li>
+                            <li>Efficient use of the network</li>
+                            <li>Do not require large installs</li>
+                        </ul>
+                    </aside>
+                </section>
 
 
-			</div>
-		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+<!-- 2. How? -->
+                <section>
+                    <h2>The three requirements</h2>
+                </section>
+
+                <section>
+                    <h3>HTTPS</h3>
+                    <img src="images/pwa/https.png" alt="" class="fragment">
+                    <ul>
+                        <li class="fragment">Secure</li>
+                        <li class="fragment">Trustworthy</li>
+                        <li class="fragment">Higher ranked in search engines</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Service worker</h3>
+                        <ul>
+                            <li class="fragment">Lives in the browser</li>
+                            <li class="fragment">Can cache assets</li>
+                            <li class="fragment">Can make cache available offline</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h4>Define the cache</h4>
+                        <pre><code>const cacheName = 'bramsmulders:4.1.3';
+const cacheFiles = [
+    '/about/',
+    '/offline/',
+    '/blog/structured-frontend-components/',
+    '/blog/how-i-improved-my-workflow-with-smacss-sass/',
+    '/blog/finger-friendly-all-the-things/'
+];</code></pre>
+
+                    </section>
+
+                    <section>
+                        <h4>Install the service worker</h4>
+                        <pre><code>self.addEventListener('install', (event) => {
+    event.waitUntil(
+        caches
+            .open(cacheName)
+            .then((cache) => {
+                // console.log('Opened cache');
+                return cache.addAll(cacheFiles);
+            })
+    );
+});</code></pre>
+
+                    </section>
+
+                    <section>
+                        <h4>Listen to the network</h4>
+                        <pre><code>self.addEventListener('fetch', (event) => {
+    event.respondWith(
+        caches
+            .match(event.request)
+            .then((response) => {
+                // Grab the response from asset cache
+                if (response) {
+                    return response;
+                }
+                return fetch(event.request);
+            })
+            .catch(() => {
+                // Network is offline, return the cached offline page
+                return caches.match('/offline/');
+            })
+    );
+});</code></pre>
+
+                    </section>
+
+                    <section>
+                        <h4>Update the service worker</h4>
+                        <pre><code>self.addEventListener('activate', (event) => {
+
+    const cacheWhitelist = ['bramsmulders:4.1.3'];
+
+    event.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cacheName) => {
+                    if (cacheWhitelist.indexOf(cacheName) === -1) {
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
+    );
+});</code></pre>
+
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h3>Web app manifest</h3>
+                        <p>manifest.json</p>
+                        <pre><code>{
+    "short_name": "Bram Smulders",
+    "name": "Bram Smulders; UX and Front-end architecture enthousiast",
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "theme_color": "#fc6471",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "\/android-icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image\/png",
+            "density": "3.0"
+        }
+    ]
+}</code></pre>
+
+                    </section>
+
+
+
+                    <section>
+                        <h4>Tell the browser about the file</h4>
+                        <pre><code><link rel="manifest" href="/manifest.json"></code></pre>
+                    </section>
+
+                    <section>
+                        <h4>Testing the banner</h4>
+                        <img src="images/pwa/manifest-test.png" alt="">
+                    </section>
+
+                    <section>
+                        <h5>Did the user install?</h5>
+                        <pre><code contenteditable>window.addEventListener('beforeinstallprompt', function(e) {
+    // beforeinstallprompt Event fired
+
+    // e.userChoice will return a Promise.
+    e.userChoice.then(function(choiceResult) {
+
+        console.log(choiceResult.outcome);
+
+        if(choiceResult.outcome == 'dismissed') {
+            console.log('User cancelled home screen install');
+        } else {
+            console.log('User added to home screen');
+        }
+    });
+});</code></pre>
+                        <aside class="notes">
+                            Explain and then show `e.preventDefault()`
+                        </aside>
+                    </section>
+                </section>
+
+
+
+
+<!-- 3. Tools of the trade? -->
+                <section>
+                    <h2>Tools of the trade</h2>
+                </section>
+
+
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
 </html>
