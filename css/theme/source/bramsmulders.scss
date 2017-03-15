@@ -106,6 +106,14 @@ section.has-dark-background {
     .image--fit-screen {
         max-height: 15em;
     }
+
+    pre {
+        width: 100%;
+    }
+
+    .hljs-deletion, .hljs-string, .hljs-built_in, .hljs-builtin-name {
+        color: $headingColor;
+    }
 }
 
 

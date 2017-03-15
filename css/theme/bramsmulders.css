@@ -51,6 +51,12 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal.reveal .image--fit-screen {
   max-height: 15em; }
 
+.reveal.reveal pre {
+  width: 100%; }
+
+.reveal.reveal .hljs-deletion, .reveal.reveal .hljs-string, .reveal.reveal .hljs-built_in, .reveal.reveal .hljs-builtin-name {
+  color: #fc6471; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
