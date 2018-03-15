@@ -1,0 +1,457 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Structured CSS</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/bramsmulders.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background-color="#ee4266">
+                    <h1>HTML & CSS Architecture</h1>
+                    <p>15-03-2018 - Bram Smulders</p>
+                </section>
+
+
+
+
+
+<!-- Principles -->
+                <section data-background-color="#3ddc97">
+                    <h2>Principles</h2>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">D</span>o not <span class="highlight">R</span>epeat <span class="highlight">Y</span>ourself.</h2>
+                    <blockquote>Every piece of knowledge must have a <span class="highlight">single, unambiguous, authoritative</span> representation within a system.</blockquote>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">D</span>o not <span class="highlight">R</span>epeat <span class="highlight">Y</span>ourself.</h2>
+                    <ul class="list-clean">
+                        <li>Every discrete piece of information should <span class="highlight">only exist once</span>.</li>
+                        <li>You shouldn't need to make <span class="highlight">the same change several times</span>.</li>
+                        <li><span class="highlight">Repetition is extra overhead</span>: more to maintain, to go wrong.</li>
+                        <li>Increases <span class="highlight">cognitive overload</span>.</li>
+                        <li>Contributes to <span class="highlight">bloat</span>.</li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2><span class="highlight">S</span>ingle <span class="highlight">S</span>ource of <span class="highlight">T</span>ruth.</h2>
+                    <blockquote>[...] the practice of structuring information models and associated schemata such that every data element <span class="highlight">is stored exactly once</span>.</blockquote>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">S</span>ingle <span class="highlight">S</span>ource of <span class="highlight">T</span>ruth.</h2>
+                    <ul class="list-clean">
+                        <li>Key data should <span class="highlight">only exist once</span> in source.</li>
+                        <li>Increases <span class="highlight">confidence</span>.</li>
+                        <li><span class="highlight">Prevents anomalies</span> and disparity.</li>
+                        <li>Make changes <span class="highlight">simpler</span>.</li>
+                        <li>Keeps your <span class="highlight">house in order</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">S</span>ingle <span class="highlight">R</span>esponsibility <span class="highlight">P</span>rinciple.</h2>
+                    <blockquote>[...] the single responsibility principle states that <span class="highlight">every class should have responsibility over a single part of the functionality</span> provided by the software, and that responsibility should be <span class="highlight">entirely encapsulated by the class</span>.</blockquote>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">S</span>ingle <span class="highlight">R</span>esponsibility <span class="highlight">P</span>rinciple.</h2>
+                    <ul class="list-clean">
+                        <li>Do one thing, <span class="highlight">one thing only</span>, and one thing well.</li>
+                        <li>Break bigger monoliths down into <span class="highlight">individual concerns</span>.</li>
+                        <li>Easier to <span class="highlight">reason about</span>.</li>
+                        <li>Provides higher <span class="highlight">composability</span></li>
+                        <li>Gives you incredible <span class="highlight">opportunity and flexibility</span>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">T</span>he <span class="highlight">S</span>eparation of <span class="highlight">C</span>oncerns.</h2>
+                    <blockquote>
+                        We should be able to understand individual parts of a program in <span class="highlight">complete isolation</span>. We should be able to study one aspect of a program <span class="highlight">without worrying</span> about any other unrelated part.
+                    </blockquote>
+                    - Harry Roberts
+                </section>
+
+                <section>
+                    <h2><span class="highlight">T</span>he <span class="highlight">S</span>eparation of <span class="highlight">C</span>oncerns.</h2>
+                    <ul class="list-clean">
+                        <li>Each thing is <span class="highlight">responsible for itself</span> and nothing more</li>
+                        <li>Reason about and <span class="highlight">study features in isolation</span>.</li>
+                        <li>Never worry <span class="highlight">about more than one thing</span> at once</li>
+                    </ul>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 2. CSS & HTML -->
+                <section data-background-color="#3ddc97">
+                    <h2>CSS & HTML</h2>
+                </section>
+
+                <section>
+                    <h2>HTML</h2>
+                    <ul class="list-clean">
+                        <li>Speaks mostly for itself</li>
+                        <li>No dependencies</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>CSS</h2>
+                    <ul class="list-clean">
+                        <li>Inheritance</li>
+                        <li>Cascade</li>
+                        <li>Specificity</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">DRY</span> in CSS.</h2>
+                    <pre><code class="css">
+.margin-top { margin-top: 24px; }
+.margin-right { margin-right: 24px; }
+.margin-bottom { margin-bottom: 24px; }
+.margin-left { margin-left: 24px; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">DRY</span> in CSS.</h2>
+                    <pre><code class="css">
+$space: 24px;
+
+.margin-top { margin-top: $space; }
+.margin-right { margin-right: $space; }
+.margin-bottom { margin-bottom: $space; }
+.margin-left { margin-left: $space; }
+                    </code></pre>
+                    Much better!
+                </section>
+
+
+
+
+                <section>
+                    <h2><span class="highlight">SRP</span> in CSS.</h2>
+                    <p>The subway analogy</p>
+                    <pre><code class="css">
+.sandwich {
+    bread: white;
+    meat: chicken;
+    salad: lettuce, onion, tomato;
+    sauce: mayonnaise;
+}
+                    </code></pre>
+                    <pre><code>
+<div class="sandwich">...</div>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">SRP</span> in CSS.</h2>
+                    <p>The subway analogy</p>
+                    <pre><code class="css">
+.bread,
+.bread--white {}
+.chicken {}
+.lettuce {}
+.onion {}
+.tomato {}
+.mayonnaise {}
+                    </code></pre>
+                    <pre><code>
+<div class="bread bread--white chicken lettuce onion tomato mayonnaise">...</div>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">SRP</span> in CSS.</h2>
+                    <p>The subway analogy</p>
+                    <pre><code class="css">
+.bread,
+.bread--white {}
+.chicken {}
+.lettuce {}
+.onion {}
+.tomato {}
+.mayonnaise {}
+                    </code></pre>
+                    <pre><code>
+<div class="bread bread--white chicken lettuce tomato mayonnaise">...</div>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">SRP</span> in CSS.</h2>
+                    <pre><code class="css">
+.button-login {
+    display: inline-block;
+    padding: 2em;
+    background-color: green;
+    color: white;
+}
+                    </code></pre>
+                    <p class="fragment">Mixing responsibilities: base, structure, cosmetic</p>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">SRP</span> in CSS.</h2>
+                    <pre><code class="css">
+.button {
+    display: inline-block;
+    padding: 1em;
+}
+
+.button--large {
+    padding: 2em;
+}
+
+.button--positive {
+    background-color: green;
+    color: white;
+}
+                    </code></pre>
+                    <p class="fragment">Everything has <span class="highlight">one reason to change</span>. <span class="fragment">Much better!</span> </p>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">SRP</span> in CSS</h2>
+                    <pre><code class="css">
+.button {}
+
+.button--large {}
+
+.button--small {}
+
+.button--positive {}
+
+.button--negative {}
+
+.button--full {}
+                    </code></pre>
+                    <p class="fragment"><span class="highlight">Mix and match classes</span> to make lots of variaties of our button.</p>
+                </section>
+
+                <section>
+                    <h2>More classes.</h2>
+                    <ul class="list-clean">
+                        <li>If a thing does three separate jobs, <span class="highlight">it needs three separate hooks</span>.</li>
+                        <li>Allows you to <span class="highlight">stay more granular</span>.</li>
+                        <li>Allows you to build <span class="highlight">more combinations quickly.</span></li>
+                        <li>Keeps CSS <span class="highlight">size down</span>. <small class="fragment">I know... GZIP, but still</small></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>More classes means more to maintain.</h2>
+                    <p>— Every developer ever</p>
+                </section>
+
+                <section>
+                    <h2>1. HTML is simple.</h2>
+                    <ul class="list-clean">
+                        <li>Changing a dozen classes in your HTML is a <span class="highlight">lot simpler</span> than picking apart a big component in the stylesheet</li>
+                        <li>One way binding: every class corresponds to a <span class="highlight">single source of truth</span> in the CSS.</li>
+                        <li><span class="highlight">Decreases cognitive load</span> by seeing what is happening right from the first touch point(HTML)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>2. <span class="highlight">DRY</span> your markup.</h2>
+                    <ul class="list-clean">
+                        <li>Why are things <span class="highlight">repeated</span> so much anyway?</li>
+                        <li>Split markup into <span class="highlight">small chunks of HTML</span> (components)</li>
+                        <li>Essentially, <span class="highlight">DRY out your markup</span> as well as your CSS</li>
+                        <li>Change it in <span class="span highlight">one place</span> instead of 40</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>3. It is your job.</h2>
+                </section>
+
+
+
+<!-- 3. OOCSS -->
+                <section data-background-color="#3ddc97">
+                    <h2>OOCSS</h2>
+                </section>
+
+                <section>
+                    <h2>CSS preprocessors.</h2>
+                    <ul class="list-clean">
+                        <li><span class="highlight">Excellent</span> when used correctly.</li>
+                        <li>Less usefull than a <span class="highlight">knowledge of architecture</span>.</li>
+                        <li>Makes nothing better, <span class="highlight">only faster to write</span>.</li>
+                        <li><span class="highlight">Still only generates CSS</span>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2><span class="highlight">O</span>bject <span class="highlight">O</span>riented CSS.</h2>
+                    <ul class="list-clean">
+                        <li>Promotes <span class="highlight">better understanding of everything</span></li>
+                        <li><span class="highlight">Solves problems</span> with/in vanilla CSS</li>
+                        <li>Can be <span class="highlight">combined with preprocessors</span></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Objects <span class="highlight">></span> components</h2>
+                    <ul class="list-clean">
+                        <li>Components are <span class="highlight">still cumbersome</span>.</li>
+                        <li>Components <span class="highlight">can not be reused</span> in CSS.</li>
+                        <li>Objects and abstractions are <span class="highlight">more usefull</span>.</li>
+                        <li>Objects can be reused to <span class="highlight">underpin multiple components</span>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Objects</h2>
+                    <ul class="list-clean">
+                        <li>Are <span class="highlight">design patterns</span>.</li>
+                        <li>Objects do <span class="highlight">not have branding</span>.</li>
+                        <li><span class="highlight">Are the skeleton</span> of your components & pages.</li>
+                        <li>A split between <span class="highlight">structure and skin</span>.</li>
+                        <li><span class="highlight">“insemantic” classes</span>, eg. <code>.media</code>.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Components</h2>
+                    <ul class="list-clean">
+                        <li>Are much, much <span class="highlight">more specific</span></li>
+                        <li>Are treated like <span class="highlight">extensions on top of your Objects</span>.</li>
+                        <li>Very <span class="highlight">explicitly named</span>.</li>
+                        <li>Much <span class="highlight">longer, descriptive classes</span> (eg. <code>.user-avatar-link</code>).</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Example</h2>
+                    <img src="images/html-css-architecture/oocss-example-01.png" alt="">
+                </section>
+
+                <section>
+                    <h2>A blocky list</h2>
+                    <img src="images/html-css-architecture/oocss-example-02.png" alt="">
+                    <pre><code class="css">
+.list-clean {}
+                    </code></pre>
+                    <p>Generic list, could contain any kind of content</p>
+
+                </section>
+
+                <section>
+                    <h2>Icons</h2>
+                    <img src="images/html-css-architecture/oocss-example-03.png" alt="">
+                    <pre><code class="html">
+<svg class="icon" role="presentation" aria-hidden="true">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="icons.svg#icon"></use>
+</svg>
+                    </code></pre>
+                    <p>Reusable icon class <code>.icon</code></p>
+                </section>
+
+                <section>
+                    <h2>Media object</h2>
+                    <img src="images/html-css-architecture/oocss-example-04.png" alt="">
+                    <pre><code class="css">
+.media {}
+.media__fit {}
+.media__fill {}
+                    </code></pre>
+                    <p>Reusable <span class="highlight">media object</span></p>
+                </section>
+
+                <section>
+                    <h2>Putting it al together</h2>
+                    <pre><code class="html">
+<div class="user-actions  media">
+    <div class="media__fit">
+        <svg class="user-actions__avatar"></svg>
+    </div>
+    <div class="media__fill">
+        <!-- Text -->
+    </div>
+    <div class="media__fit">
+        <svg class="user-actions__chevron"></svg>
+    </div>
+</div>
+                    </code></pre>
+                    <p>Sweet!</p>
+                </section>
+
+                <section>
+                    <h2>Takeaways</h2>
+                    <ul class="list-clean">
+                        <li>More markup, more classes, <span class="highlight">a LOT less CSS</span>.</li>
+                        <li>It makes the component <span class="highlight">more versatile</span>, pick and choose what you want. No-icon? no problem!</li>
+                        <li>Abstractions come <span class="highlight">free of charge</span>, they are already there and free to user over, and over<span class="fragment">, and over</span><span class="fragment">, and over</span><span class="fragment">, and over.</span></li>
+                    </ul>
+                </section>
+
+
+
+
+<!-- 3. ITCSS -->
+                <section data-background-color="#3ddc97">
+                    <h2>ITCSS</h2>
+                </section>
+
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                controls: false,
+                transition: 'none',
+                backgroundTransition: 'none',
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>

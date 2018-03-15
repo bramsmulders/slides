@@ -27,13 +27,13 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   text-decoration: underline;
   text-decoration-skip: ink;
   text-decoration-color: #ee4266;
-  color: #3e4147; }
+  color: #12355b; }
   .reveal.reveal a:hover, .reveal.reveal a:focus, .reveal.reveal a:active {
     color: #ee4266; }
 
 .reveal.reveal blockquote {
   width: auto;
-  margin: 0 1.5em 0 1.5em;
+  margin: 0 1.5em 0 0;
   padding: 0.75em 1.5em;
   text-indent: 0;
   font-style: italic;
@@ -72,10 +72,10 @@ html:-webkit-full-screen-ancestor {
   font-family: "Crimson Text", serif;
   font-size: 38px;
   font-weight: normal;
-  color: #3e4147; }
+  color: #12355b; }
 
 ::selection {
-  color: #3e4147;
+  color: #12355b;
   background: #fee1e4;
   text-shadow: none; }
 
@@ -93,14 +93,64 @@ html:-webkit-full-screen-ancestor {
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  margin: 0 0 20px 0;
+  position: relative;
+  margin: 0 0 1em 0;
   color: #ee4266;
+  color: #12355b;
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
   text-shadow: none;
   word-wrap: break-word; }
+
+.reveal h1:after,
+.reveal h2:after,
+.reveal h3:after,
+.reveal h4:after,
+.reveal h5:after,
+.reveal h6:after {
+  position: absolute;
+  top: calc(100% + 0.25em);
+  left: 0;
+  width: calc(1em * 1.5);
+  height: 0.125em;
+  background-color: #ee4266;
+  content: "";
+}
+
+.highlight {
+  color: #ee4266;
+}
+
+section.has-dark-background,
+section.has-dark-background h1,
+section.has-dark-background h2,
+section.has-dark-background h3,
+section.has-dark-background h4,
+section.has-dark-background h5,
+section.has-dark-background h6 {
+  color: #fff;
+}
+
+section.has-dark-background h1:after {
+  background-color: #ffffff;
+},
+section.has-dark-background h2:after {
+  background-color: #ffffff;
+},
+section.has-dark-background h3:after {
+  background-color: #ffffff;
+},
+section.has-dark-background h4:after {
+  background-color: #ffffff;
+},
+section.has-dark-background h5:after {
+  background-color: #ffffff;
+},
+section.has-dark-background h6:after {
+  background-color: #ffffff;
+}
 
 .reveal h1 {
   font-size: 2.5em; }
@@ -173,6 +223,10 @@ html:-webkit-full-screen-ancestor {
 .reveal .list-clean {
   list-style: none;
   margin-left: 0;
+}
+
+.reveal .list-clean li:not(:last-child) {
+  margin-bottom: 1em;
 }
 
 .reveal q,
@@ -284,7 +338,7 @@ html:-webkit-full-screen-ancestor {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #3e4147;
+  border: 4px solid #12355b;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal section img.plain {
