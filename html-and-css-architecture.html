@@ -29,6 +29,16 @@
                     <p>15-03-2018 - Bram Smulders</p>
                 </section>
 
+                <section>
+                    <h2>Credits</h2>
+                    <ul class="list-clean">
+                        <li>Harry Roberts</li>
+                        <li>Nicolas Gallagher</li>
+                        <li>Nicole Sullivan</li>
+                        <li>Jonathan Snook</li>
+                    </ul>
+                </section>
+
 
 
 
@@ -283,6 +293,7 @@ $space: 24px;
                     <ul class="list-clean">
                         <li>Changing a dozen classes in your HTML is a <span class="highlight">lot simpler</span> than picking apart a big component in the stylesheet</li>
                         <li>One way binding: every class corresponds to a <span class="highlight">single source of truth</span> in the CSS.</li>
+                        <li>A nice <span class="highlight">one-to-many releationship</span> between HTML & CSS</li>
                         <li><span class="highlight">Decreases cognitive load</span> by seeing what is happening right from the first touch point(HTML)</li>
                     </ul>
                 </section>
@@ -299,6 +310,12 @@ $space: 24px;
 
                 <section>
                     <h2>3. It is your job.</h2>
+                    <ul class="list-clean">
+                        <li>Do not be afraid to touch/change markup</li>
+                        <li>1 base button component, 5 types, and 3 additional sizes:</li>
+                        <li>Multi-class: 9 classes that can be mixed and matched</li>
+                        <li>Single class: 24 classes</li>
+                    </ul>
                 </section>
 
 
@@ -398,17 +415,21 @@ $space: 24px;
                 <section>
                     <h2>Putting it al together</h2>
                     <pre><code class="html">
-<div class="user-actions  media">
-    <div class="media__fit">
-        <svg class="user-actions__avatar"></svg>
-    </div>
-    <div class="media__fill">
-        <!-- Text -->
-    </div>
-    <div class="media__fit">
-        <svg class="user-actions__chevron"></svg>
-    </div>
-</div>
+<ul class="list-clean">
+    <li>
+        <div class="user-action  media">
+            <div class="media__fit">
+                <svg class="user-action__avatar"></svg>
+            </div>
+            <div class="media__fill">
+                <!-- Text -->
+            </div>
+            <div class="media__fit">
+                <svg class="user-action__chevron"></svg>
+            </div>
+        </div>
+    </li>
+</ul>
                     </code></pre>
                     <p>Sweet!</p>
                 </section>
