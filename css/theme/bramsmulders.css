@@ -349,6 +349,10 @@ section.has-dark-background h6:after {
   border: 0;
   box-shadow: none; }
 
+.reveal section img.small {
+  max-width: 75%;
+}
+
 .reveal a img {
   -webkit-transition: all .15s linear;
   -moz-transition: all .15s linear;
