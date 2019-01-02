@@ -56,6 +56,10 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal.reveal pre {
   width: 100%; }
 
+.reveal .hljs {
+  background-color: #12355b;
+}
+
 .reveal.reveal .hljs-deletion, .reveal.reveal .hljs-string, .reveal.reveal .hljs-built_in, .reveal.reveal .hljs-builtin-name {
   color: #ee4266; }
 

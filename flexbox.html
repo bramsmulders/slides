@@ -1,0 +1,621 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Flexbox</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/bramsmulders.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+            .reveal .demo-flex {
+                position: relative;
+                display: flex;
+                padding: 10px 10px;
+                margin-right: 1.5em;
+                background-color: #3ddc97;
+            }
+
+            .reveal .demo-flex--column {
+                flex-direction: column;
+                display: inline-flex;
+            }
+
+            .reveal .demo-flex--large {
+                height: 8em;
+            }
+
+            .reveal .demo-flex__item {
+                display: flex;
+                width: 5em;
+                min-height: 5em;
+                background-color: white;
+                margin: 10px;
+                align-items: center;
+                justify-content: center;
+                text-transform: uppercase;
+                font-size: 0.5em;
+            }
+
+            .reveal .demo-flex__item.auto {
+                margin: auto;
+            }
+
+            .reveal .demo-flex__item.left-auto {
+                margin-left: auto;
+            }
+
+            .reveal .demo-flex__item--large {
+                min-height: 10em;
+            }
+
+            .reveal .demo-flex__cross {
+                position: absolute;
+                top: 50%;
+                left: calc(100% - 0.75em);
+                white-space: nowrap;
+                transform: translateY(-50%) rotate(90deg);
+                margin: 0;
+            }
+        </style>
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-background-color="#ee4266">
+                    <h1>Flexbox</h1>
+                    <p>03-04-2018 - Bram Smulders</p>
+                </section>
+
+
+
+
+
+<!-- display: flex -->
+                <section data-background-color="#3ddc97">
+                    <h2>display: flex</h2>
+                </section>
+
+                <section>
+                    <h3>display: flex</h3>
+                    <ul class="list-clean">
+                        <li>Vanuit de <span class="highlight">content</span></li>
+                        <li>Groottes gedefinieerd op <span class="highlight">het item</span></li>
+                        <li>1 dimensionaal</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>flex container</h3>
+                    <div class="demo-flex">
+                        <div class="demo-flex__item"><span class="fragment" data-fragment-index="1">item</span></div>
+                        <div class="demo-flex__item"><span class="fragment" data-fragment-index="1">item</span></div>
+                        <div class="demo-flex__item"><span class="fragment" data-fragment-index="1">item</span></div>
+                        <div class="demo-flex__item"><span class="fragment" data-fragment-index="1">item</span></div>
+                        <div class="demo-flex__item"><span class="fragment" data-fragment-index="1">item</span></div>
+                    </div>
+                    <pre><code class="css">
+.container { display: flex; }
+                    </code></pre>
+                    <p class="fragment" data-fragment-index="1">Directe kinderen worden flex items zolang ze <span class="highlight">‘in flow’</span> zijn.<br><span class="fragment" data-fragment-index="2">Exclusief witruimte</span><span class="fragment" data-fragment-index="3">, <span class="highlight">inclusief losse tekst</span>.</span></p>
+                </section>
+
+                <section>
+                    <h3>flex items</h3>
+                    <pre><code class="html">
+<div class="container">
+    <div>flex item</div>
+    <div>flex item</div>
+    flex item
+</div>
+                    </code></pre>
+                </section>
+
+<!-- main vs. cross -->
+                <section data-background-color="#3ddc97">
+                    <h2>Main axis vs cross axis</h2>
+                </section>
+
+                <section>
+                    <h3>Main axis vs cross axis</h3>
+                    <p>main →</p>
+                    <div class="demo-flex">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <p class="demo-flex__cross">cross →</p>
+                    </div>
+
+                    <pre><code class="css">
+.container { flex-direction: row; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Main axis vs cross axis</h3>
+                    <p>cross →</p>
+                    <div class="demo-flex  demo-flex--column">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <p class="demo-flex__cross">main →</p>
+                    </div>
+                    <pre><code class="css">
+.container { flex-direction: column; }
+                    </code></pre>
+                </section>
+
+
+
+
+<!-- flex item -->
+                <section data-background-color="#3ddc97">
+                    <h2>flex item</h2>
+                </section>
+
+
+                <section>
+                    <h3>flex item: <span class="highlight">werkt niet meer</span></h3>
+                    <ul class="list-clean">
+                        <li>vertical-align</li>
+                        <li>float</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>flex item: <span class="highlight">werkt nu</span></h3>
+                    <ul class="list-clean">
+                        <li>flex</li>
+                        <li>automagische margins</li>
+                        <li>align-self</li>
+                        <li>order</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>flex item: <span class="highlight">flex</span></h3>
+                    <pre><code class="css">
+.item {
+    flex-grow: 0; /* Maximale groeifactor */
+    flex-shrink: 1; /* Maximale verkleinfactor */
+    flex-basis: auto; /* Initiële grootte */
+}
+                    </code></pre>
+                    <pre class="fragment"><code class="css">
+.item { flex: 0 1 auto; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>flex item: <span class="highlight">flex</span></h3>
+                    <pre><code class="css">
+.item { flex: initial; }
+                    </code></pre>
+                    <p>Laat item niet groter worden, <span class="highlight">wel kleiner</span>.</p>
+
+                    <pre><code class="css">
+.item { flex: auto; }
+                    </code></pre>
+                    <p>Laat item <span class="highlight">groter, maar ook kleiner</span> worden.</p>
+                    <pre><code class="css">
+.item { flex: none; }
+                    </code></pre>
+                    <p>Niet flexibel, laat item <span class="highlight">niet groter of kleiner</span> worden.</p>
+                </section>
+
+                <section>
+                    <h3>flex item: <span class="highlight">wrapping</span></h3>
+                    <p>Wil je items over meerdere kolommen/rijen of juist niet?</p>
+                    <pre><code class="css">
+.container { flex-wrap: nowrap | wrap; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>flex item: <span class="highlight">magic margins</span></h3>
+                    <div class="demo-flex">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item  left-auto">item</div>
+                    </div>
+                    <pre><code class="">
+.item.left-auto { margin-left: auto; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>flex item: <span class="highlight">magic margins</span></h3>
+                    <div class="demo-flex  demo-flex--large">
+                        <div class="demo-flex__item  auto">item</div>
+                    </div>
+                    <pre><code class="">
+.item.auto { margin: auto; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>flex item: <span class="highlight">alignment</span></h3>
+                    <div class="demo-flex  demo-flex--large">
+                        <div class="demo-flex__item" style="align-self: center;">item</div>
+                    </div>
+                    <pre><code class="">
+.item { align-self: center; }
+                    </code></pre>
+                </section>
+
+
+                <section>
+                    <h3>flex item: <span class="highlight">alignment</span></h3>
+                    <div class="demo-flex  demo-flex--large">
+                        <div class="demo-flex__item" style="align-self: flex-end;">item</div>
+                    </div>
+                    <pre><code class="">
+.item { align-self: flex-end; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>flex item: <span class="highlight">alignment</span></h3>
+                    <div class="demo-flex  demo-flex--large">
+                        <div class="demo-flex__item" style="align-self: stretch;">item</div>
+                    </div>
+                    <pre><code class="">
+.item { align-self: stretch; }
+                    </code></pre>
+                </section>
+
+
+
+<!-- flex container -->
+                <section data-background-color="#3ddc97">
+                    <h2>flex container</h2>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">main axis</span></h3>
+                </section>
+
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">main axis</span></h3>
+                    <div class="demo-flex">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { justify-content: flex-start; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">main axis</span></h3>
+                    <div class="demo-flex" style="justify-content: flex-end;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { justify-content: flex-end; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">main axis</span></h3>
+                    <div class="demo-flex" style="justify-content: center;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { justify-content: center; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">main axis</span></h3>
+                    <div class="demo-flex" style="justify-content: space-between;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { justify-content: space-between; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">main axis</span></h3>
+                    <div class="demo-flex" style="justify-content: space-around;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { justify-content: space-around; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">cross axis</span></h3>
+                    <p>Uitlijnen van de lijn <span class="highlight">ten opzichte van de container</span> op de cross axis</p>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">cross axis</span></h3>
+                    <div class="demo-flex  demo-flex--large" style="flex-wrap: wrap; align-content: stretch;">
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                            <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { align-content: stretch; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">cross axis</span></h3>
+                    <div class="demo-flex  demo-flex--large" style="flex-wrap: wrap; align-content: flex-start;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { align-content: flex-start; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">cross axis</span></h3>
+                    <div class="demo-flex  demo-flex--large" style="flex-wrap: wrap; align-content: flex-end;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { align-content: flex-end; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">cross axis</span></h3>
+                    <div class="demo-flex  demo-flex--large" style="flex-wrap: wrap; align-content: center;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { align-content: center; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">cross axis</span></h3>
+                    <div class="demo-flex  demo-flex--large" style="flex-wrap: wrap; align-content: space-between;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { align-content: space-between; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Content uitlijning: <span class="highlight">cross axis</span></h3>
+                    <div class="demo-flex  demo-flex--large" style="flex-wrap: wrap; align-content: space-around;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { align-content: space-around; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Items uitlijning: <span class="highlight">cross axis</span></h3>
+                    <p>Uitlijnen van de items <span class="highlight">ten opzichte van de lijn</span> op de cross axis</p>
+                </section>
+
+
+                <section>
+                    <h3>Items uitlijning: <span class="highlight">cross axis</span></h3>
+                    <div class="demo-flex  demo-flex--large" style="flex-wrap: wrap; align-items: stretch;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { align-items: stretch; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Items uitlijning: <span class="highlight">cross axis</span></h3>
+                    <div class="demo-flex  demo-flex--large" style="flex-wrap: wrap; align-items: flex-start;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { align-items: flex-start; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Items uitlijning: <span class="highlight">cross axis</span></h3>
+                    <div class="demo-flex  demo-flex--large" style="flex-wrap: wrap; align-items: flex-end;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { align-items: flex-end; }
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Items uitlijning: <span class="highlight">cross axis</span></h3>
+                    <div class="demo-flex  demo-flex--large" style="flex-wrap: wrap; align-items: center;">
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                        <div class="demo-flex__item">item</div>
+                    </div>
+                    <pre><code class="">
+.container { align-items: center; }
+                    </code></pre>
+                </section>
+
+
+
+<!-- flex container -->
+                <section data-background-color="#3ddc97">
+                    <h2>Order</h2>
+                </section>
+
+                <section>
+                    <h3>Order</h3>
+                    <div class="demo-flex">
+                        <div class="demo-flex__item" style="order: 2;">item 1</div>
+                        <div class="demo-flex__item" style="order: 2;">item 2</div>
+                        <div class="demo-flex__item" style="order: 1;"><span class="highlight">item 3</span></div>
+                    </div>
+                    <pre><code class="">
+.item:last-child { order: 1; }
+                    </code></pre>
+                </section>
+
+
+
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                controls: false,
+                transition: 'none',
+                backgroundTransition: 'none',
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'plugin/markdown/marked.js' },
+                    { src: 'plugin/markdown/markdown.js' },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
